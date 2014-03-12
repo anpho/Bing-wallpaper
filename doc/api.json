@@ -1,17 +1,32 @@
-var bingwp={
-	lang:'zh-CN',
-	apiurl:"http://www.bing.com/HPImageArchive.aspx?format=js&idx={idx}&n={n}&mkt={lang}",
-	get:function(callback,idx,n,lang){
-		var url=apiurl.replace('{idx}',idx).replace('{n}',n).replace('{lang}',lang);
-		$.getJSON(url).done(function(data){
+var bingwp = {
+	lang: 'zh-CN',
+	apiurl: "http://www.bing.com/HPImageArchive.aspx?format=js&idx={idx}&n={n}&mkt={lang}",
+	get: function(callback, idx, n, lang) {
+		var url = apiurl.replace('{idx}', idx).replace('{n}', n).replace('{lang}', lang);
+		$.getJSON(url).done(function(data) {
 			callback(data);
-		}).fail(function(data){
+		}).fail(function(data) {
 			callback(null);
 		})
 	},
-	getToday:function(callback){
-		bingwp.get(function(d){
+	getToday: function(callback) {
+		bingwp.get(function(d) {
 			callback(d)
-		},0,1,bingwp.lang);
+		}, 0, 1, bingwp.lang);
+	},
+	getTodayWallpaper: function(callback, size) {
+		bingwp.getToday(function(d) {
+			if (d) {
+				var u = d['images'][0].urlbase;
+				u = 'http://www.bing.com' + u + size;
+				callback(u);
+			} else {
+				callback(null);
+			}
+		})
 	}
+	fullSize: '_1920x1200.jpg',
+	z10: '_768x1280.jpg',
+	z30: '_720x1280.jpg',
+	q10: '_1280x720.jpg'
 }
