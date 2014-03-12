@@ -1,0 +1,17 @@
+var bingwp={
+	lang:'zh-CN',
+	apiurl:"http://www.bing.com/HPImageArchive.aspx?format=js&idx={idx}&n={n}&mkt={lang}",
+	get:function(callback,idx,n,lang){
+		var url=apiurl.replace('{idx}',idx).replace('{n}',n).replace('{lang}',lang);
+		$.getJSON(url).done(function(data){
+			callback(data);
+		}).fail(function(data){
+			callback(null);
+		})
+	},
+	getToday:function(callback){
+		bingwp.get(function(d){
+			callback(d)
+		},0,1,bingwp.lang);
+	}
+}
