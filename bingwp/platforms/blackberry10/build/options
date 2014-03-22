@@ -1,4 +1,6 @@
 -package
+-buildId
+3
 C:\DOCUME~1\ADMINI~1\MYDOCU~1\GitHub\BING-W~1\bingwp\PLATFO~1\BLACKB~1\build\device\bb10app.bar
 -barVersion
 1.5
@@ -19,6 +21,7 @@ C:\DOCUME~1\ADMINI~1\MYDOCU~1\GitHub\BING-W~1\bingwp\PLATFO~1\BLACKB~1\build\src
 C:\DOCUME~1\ADMINI~1\MYDOCU~1\GitHub\BING-W~1\bingwp\PLATFO~1\BLACKB~1\build\src\chrome\lib\exception.js
 C:\DOCUME~1\ADMINI~1\MYDOCU~1\GitHub\BING-W~1\bingwp\PLATFO~1\BLACKB~1\build\src\chrome\lib\utils.js
 C:\DOCUME~1\ADMINI~1\MYDOCU~1\GitHub\BING-W~1\bingwp\PLATFO~1\BLACKB~1\build\src\css\bbui-min.css
+C:\DOCUME~1\ADMINI~1\MYDOCU~1\GitHub\BING-W~1\bingwp\PLATFO~1\BLACKB~1\build\src\css\bbui.css
 C:\DOCUME~1\ADMINI~1\MYDOCU~1\GitHub\BING-W~1\bingwp\PLATFO~1\BLACKB~1\build\src\css\index.css
 C:\DOCUME~1\ADMINI~1\MYDOCU~1\GitHub\BING-W~1\bingwp\PLATFO~1\BLACKB~1\build\src\img\ic_all.png
 C:\DOCUME~1\ADMINI~1\MYDOCU~1\GitHub\BING-W~1\bingwp\PLATFO~1\BLACKB~1\build\src\img\ic_connections.png
@@ -53,6 +56,7 @@ C:\DOCUME~1\ADMINI~1\MYDOCU~1\GitHub\BING-W~1\bingwp\PLATFO~1\BLACKB~1\build\src
 C:\DOCUME~1\ADMINI~1\MYDOCU~1\GitHub\BING-W~1\bingwp\PLATFO~1\BLACKB~1\build\src\js\bbui-min.js
 C:\DOCUME~1\ADMINI~1\MYDOCU~1\GitHub\BING-W~1\bingwp\PLATFO~1\BLACKB~1\build\src\js\bfb_bootstrap.js
 C:\DOCUME~1\ADMINI~1\MYDOCU~1\GitHub\BING-W~1\bingwp\PLATFO~1\BLACKB~1\build\src\js\cache.js
+C:\DOCUME~1\ADMINI~1\MYDOCU~1\GitHub\BING-W~1\bingwp\PLATFO~1\BLACKB~1\build\src\js\hammer.min.js
 C:\DOCUME~1\ADMINI~1\MYDOCU~1\GitHub\BING-W~1\bingwp\PLATFO~1\BLACKB~1\build\src\js\i18n.js
 C:\DOCUME~1\ADMINI~1\MYDOCU~1\GitHub\BING-W~1\bingwp\PLATFO~1\BLACKB~1\build\src\js\index.js
 C:\DOCUME~1\ADMINI~1\MYDOCU~1\GitHub\BING-W~1\bingwp\PLATFO~1\BLACKB~1\build\src\js\invoke.js

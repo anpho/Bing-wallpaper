@@ -47,14 +47,14 @@ var app = {
         if (app.darkColoring) {
             config = {
                 controlsDark: true,
-                highlightColor:'#00ee00',
+                highlightColor: '#ffcc00',
                 listsDark: true
             };
         } else {
             config = {
                 controlsDark: false,
                 listsDark: false,
-                highlightColor:'#00ee00',
+                highlightColor: '#ffcc00',
                 coloredTitleBar: true
             };
         }
@@ -75,7 +75,6 @@ var app = {
         };
         config.ondomready = function(element, id, params) {
             if (id === 'view') {
-
                 if (params) {
 
                 } else {
@@ -99,6 +98,7 @@ var app = {
                         showimage();
                     }
                 });
+
                 $('#_next').bind('click', function() {
                     if (currentdayidx === 0) {
                         Toast.regular(i18n.get('nomore2', app.lang), 1000);
@@ -115,6 +115,28 @@ var app = {
                         showimage();
                     }
                 });
+
+                Hammer(element.getElementById('_screen')).on('swiperight', function(ev) {
+                    //prev
+                    if (currentdayidx > 19) {
+                        Toast.regular(i18n.get('nomore', app.lang), 1000);
+                    } else {
+                        currentdayidx += 1;
+                        showimage();
+                    }
+                }).on('swipeleft', function(ev) {
+                    //next
+                    if (currentdayidx === 0) {
+                        Toast.regular(i18n.get('nomore2', app.lang), 1000);
+                    } else {
+                        currentdayidx -= 1;
+                        showimage();
+                    }
+                });
+                Hammer(element.getElementById('_image')).on('tap hold doubletap', function(ev) {
+                    toggleActionBar()
+                });
+
                 $('#_copyurl').bind('click', function() {
                     community.clipboard.setText(currenturl);
                 });
@@ -122,18 +144,26 @@ var app = {
                     Invoke.targets(cachedurl);
                 });
                 $('#_set').bind('click', function() {
-                    invocation.HomeScreen.setWallpaper(cachedurl, function(result) {
-                        if (!result) {
-                            Toast.regular(invocation.lastError, 1500);
-                        }
-                    })
+                    if (bb.device.is720x720) {
+                        invocation.HomeScreen.setWallpaper(cachedurl, function(result) {
+                            if (!result) {
+                                Toast.regular(invocation.lastError, 1500);
+                            }
+                        });
+                    } else {
+                        blackberry.system.setWallpaper(cachedurl);
+                    }
                 });
                 $('#_set2').bind('click', function() {
-                    invocation.HomeScreen.setWallpaper(cachedurl, function(result) {
-                        if (!result) {
-                            Toast.regular(invocation.lastError, 1500);
-                        }
-                    })
+                    if (bb.device.is720x720) {
+                        invocation.HomeScreen.setWallpaper(cachedurl, function(result) {
+                            if (!result) {
+                                Toast.regular(invocation.lastError, 1500);
+                            }
+                        });
+                    } else {
+                        blackberry.system.setWallpaper(cachedurl);
+                    }
                 });
                 $('#_reload').bind('click', function() {
                     localStorage.removeItem(currentday.format('yyyy-MM-dd'));
@@ -161,6 +191,20 @@ var app = {
         //navigator.splashscreen.hide();
     }
 };
+var actionbarshow = true;
+function toggleActionBar() {
+    if (actionbarshow) {
+        $('#_ab')[0].hide();
+        actionbarshow = false;
+    } else {
+        $('#_ab')[0].show();
+        actionbarshow = true;
+    }
+}
+function hideActionBar() {
+    $('#_ab')[0].hide();
+    actionbarshow = false;
+}
 function showimage() {
     $('#_image').empty();
     $('#ind').show();
@@ -228,7 +272,7 @@ var bingwp = {
             }
         });
     },
-    "fullSize": '_1920x1200.jpg',
+    "fullSize": '_1920x1080.jpg',
     "z10": '_768x1280.jpg',
     "z30": '_720x1280.jpg',
     "q10": '_720x1280.jpg'
