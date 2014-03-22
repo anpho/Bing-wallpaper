@@ -1,0 +1,8 @@
+{
+    "version": "1.0.0",
+    "name": "com.blackberry.community.clipboard",
+    "cordova_name": "Clipboard",
+    "description": "BlackBerry 10 Community Contributed API to access the system clipboard",
+    "license": "Apache 2.0",
+    "engines": []
+}
