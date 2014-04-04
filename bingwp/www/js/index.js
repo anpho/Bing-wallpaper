@@ -40,7 +40,7 @@ var app = {
             if (window.innerWidth === 720) {
                 app.darkColoring = true;
             } else {
-                app.darkColoring = false;
+                app.darkColoring = true;
             }
         }
         var config;
@@ -83,7 +83,7 @@ var app = {
                 }
                 //bind events
                 $('#_prev').bind('click', function() {
-                    if (currentdayidx > 19) {
+                    if (currentdayidx > 17) {
                         Toast.regular(i18n.get('nomore', app.lang), 1000);
                     } else {
                         currentdayidx += 1;
@@ -91,7 +91,7 @@ var app = {
                     }
                 });
                 $('#_prev2').bind('click', function() {
-                    if (currentdayidx > 19) {
+                    if (currentdayidx > 17) {
                         Toast.regular(i18n.get('nomore', app.lang), 1000);
                     } else {
                         currentdayidx += 1;
@@ -118,7 +118,7 @@ var app = {
 
                 Hammer(element.getElementById('_screen')).on('swiperight', function(ev) {
                     //prev
-                    if (currentdayidx > 19) {
+                    if (currentdayidx > 17) {
                         Toast.regular(i18n.get('nomore', app.lang), 1000);
                     } else {
                         currentdayidx += 1;
@@ -138,8 +138,15 @@ var app = {
                 });
 
                 $('#_copyurl').bind('click', function() {
-                    community.clipboard.setText(currenturl);
-                });
+                    var a = community.clipboard.setText(currenturl);
+                    if (a > 0) {
+                        Toast.regular(i18n.get('copied', app.lang), 1000);
+                    }
+                    else {
+                        Toast.regular(i18n.get('copied', app.lang), 1000);
+                    }
+                }
+                );
                 $('#_share').bind('click', function() {
                     Invoke.targets(cachedurl);
                 });
@@ -213,7 +220,12 @@ function showimage() {
     currentday = td;
     $('#_notes').text(td.toLocaleDateString());
     bingwp.getDaysBeforeWallpaper(function(url) {
+        if (url === null) {
+            Toast.regular('Error fetching image,please report to developer,Thanks.', 1000);
+            return;
+        }
         currenturl = url;
+
         cache.get(url, currentday.format('yyyy-MM-dd'), '_image', function(u, id) {
             var i = new Image();
             i.src = u;

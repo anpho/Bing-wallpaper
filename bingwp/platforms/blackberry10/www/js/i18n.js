@@ -17,7 +17,8 @@ var qstr = {
         'about2':'自动适配BlackBerry Z10/Z30。如果你使用的是BlackBerry Q10/Q5，你需要手动进行裁剪以获得最佳视角。',
         'Test':'测试小组',
         'nomore':"没有此前的数据",
-        'nomore2':'没有此后的数据'
+        'nomore2':'没有此后的数据',
+        'copied':'链接已复制到剪贴板'
     },
     'en-US':{
         'Previous':'Previous',
@@ -35,6 +36,7 @@ var qstr = {
         'about2':'Adapted for BlackBerry Z10/Z30. You need to crop the images by yourself if you\'re useing BlackBerry Q10/Q5' ,
         'Test':'Test Team',
         'nomore':"No data before this day",
-        'nomore2':'No data after this day'
+        'nomore2':'No data after this day',
+        'copied':'Link copied to clipboard.'
     }
 };
