@@ -1,18 +1,18 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="anpho.bing" version="0.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:rim="http://www.blackberry.com/ns/widgets">
     <feature name="com.blackberry.app" value="com.blackberry.app" />
-    <feature name="com.blackberry.community.clipboard" value="com.blackberry.community.clipboard" />
-    <feature name="com.blackberry.invoke" value="com.blackberry.invoke" />
-    <feature name="com.blackberry.invoke.card" value="com.blackberry.invoke.card" />
-    <feature name="com.blackberry.io" value="com.blackberry.io" />
-    <feature name="com.blackberry.io.filetransfer" value="com.blackberry.io.filetransfer" />
+    <feature name="com.blackberry.utils" />
     <feature name="com.blackberry.jpps" />
     <feature name="com.blackberry.system" value="com.blackberry.system" />
+    <feature name="com.blackberry.invoke" value="com.blackberry.invoke" />
+    <feature name="com.blackberry.io" value="com.blackberry.io" />
+    <feature name="com.blackberry.io.filetransfer" value="com.blackberry.io.filetransfer" />
+    <feature name="com.blackberry.community.clipboard" value="com.blackberry.community.clipboard" />
+    <feature name="com.blackberry.invoke.card" value="com.blackberry.invoke.card" />
     <feature name="com.blackberry.ui.toast" value="com.blackberry.ui.toast" />
-    <feature name="com.blackberry.utils" />
     <name>Bing Wallpapers</name>
     <name xml:lang="zh-CN">必应美图</name>
-    <author>anpho</author>
+    <access subdomains="true" uri="http://www.bing.com" />
     <description>Bing Wallpapers Everyday</description>
     <content src="index.html" />
     <icon src="img/logo.png" />
@@ -23,6 +23,6 @@
     <preference name="Orientation" value="portrait" />
     <preference name="PopupBlocker" value="disable" />
     <preference name="WebSecurity" value="disable" />
-    <preference name="BackgroundColor" value="0x262626ff" />
-    <access subdomains="true" uri="http://www.bing.com" />
+    <preference name="SpatialNavigation" value="true" />
+    <author>anpho</author>
 </widget>
