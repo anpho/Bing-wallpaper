@@ -14,11 +14,12 @@ var qstr = {
         'dev':'Merrick Zhang (anphorea@gmail.com),微博 @anphox',
         'Developer':'开发人员',
         'about1':'这个app可以让你下载每日必应美图，并将其设置为壁纸。',
-        'about2':'自动适配BlackBerry Z10/Z30。如果你使用的是BlackBerry Q10/Q5，你需要手动进行裁剪以获得最佳视角。',
+        'about2':'自动适配BlackBerry Z10/Z30。如果你使用的是BlackBerry Q10/Q5/Passport，你需要手动进行裁剪以获得最佳视角。',
         'Test':'测试小组',
         'nomore':"没有此前的数据",
         'nomore2':'没有此后的数据',
-        'copied':'链接已复制到剪贴板'
+        'copied':'链接已复制到剪贴板',
+        'Team':"致谢"
     },
     'en-US':{
         'Previous':'Previous',
@@ -33,10 +34,11 @@ var qstr = {
         'dev':'Port Programmer / UI: Merrick Zhang (anphorea@gmail.com), as anpho',
         'Developer':'Developer',
         'about1':'This app will help you download daily updated Bing wallpapers and set them as wallpaper.',
-        'about2':'Adapted for BlackBerry Z10/Z30. You need to crop the images by yourself if you\'re useing BlackBerry Q10/Q5' ,
+        'about2':'Adapted for BlackBerry Z10/Z30. You need to crop the images by yourself if you\'re useing BlackBerry Q10/Q5/Passport' ,
         'Test':'Test Team',
         'nomore':"No data before this day",
         'nomore2':'No data after this day',
-        'copied':'Link copied to clipboard.'
+        'copied':'Link copied to clipboard.',
+        "Team":"Credits"
     }
 };

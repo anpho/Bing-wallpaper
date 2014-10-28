@@ -1,33 +1,32 @@
 <div data-bb-type="screen">
-	<div data-bb-type="round-panel">
-		<div data-bb-type="panel-header" i18n="true">`about`</div>
-		<p i18n="true">`about1`</p>
-		<p i18n="true">`about2`</p>
-	</div>
-	<div data-bb-type="round-panel">
-		<div data-bb-type="panel-header" i18n="true">`Developer`</div>
-		<p style="background: url(img/team/MRK.png) no-repeat top left;padding-left:160px;height:160px;padding-top: 10px;">
-			Merrick Zhang
-			<br>
-			<img src="img/t.png" onclick='openTwitterAccount("anpho")' />
-			<img src="img/e.png" onclick="Invoke.email('anphorea@gmail.com', '[2048]Feedback', '')" />
-			<img src="img/g.png" onclick="openInBrowser('http://github.com/anpho')" />
-			<img src="img/p.png" onclick="openInBrowser('https://plus.google.com/+MerrickZhang')">
-		</p>
-	</div>
-	<div data-bb-type="grid-layout" data-bb-style="square" data-bb-header-justify="left">
-		<div data-bb-type="group" i18n="true" data-bb-title="`Test`">
-			<div data-bb-type="row">
-				<div data-bb-type="item" data-bb-img="img/team/lz.jpg" data-bb-title="@Lizzy" lang="zh-CN" onclick="openTwitterAccount('hello_lizlee')"></div>
-				<div data-bb-type="item" data-bb-img="img/team/xzlr.jpg" data-bb-title="Goden Freeman" lang="zh-CN" onclick="openInBrowser('http://www.douban.com/people/LonelyCatcher')"></div>
-				<div data-bb-type="item" data-bb-img="img/team/ztbj.jpg" data-bb-title="折腾笔记" lang="zh-CN" onclick="openInBrowser('http://about.me/zhetengbiji')"></div>
-				<div data-bb-type="item" data-bb-img="img/team/cjj.jpg" data-bb-title="@Chen Jingjie" lang="zh-CN" onclick="openTwitterAccount('jjasonchan')"></div>
-			</div>
-			<div data-bb-type="row" data-bb-columns="4">
-				<div data-bb-type="item" data-bb-img="img/team/lm.png" data-bb-title="@BBer老麦" lang="zh-CN" onclick="openTwitterAccount('i5blackberry')"></div>
-				<div data-bb-type="item" data-bb-img="img/team/jy.jpg" data-bb-title="孑弋" lang="zh-CN" onclick="openInBrowser('http://about.me/jieyi_rain')"></div>
-			</div>
-		</div>
-	</div>
-	<div data-bb-type="action-bar" data-bb-back-caption="Back"></div>
+    <div data-bb-type="round-panel">
+        <div data-bb-type="panel-header" i18n="true">`about`</div>
+        <p i18n="true">`about1`</p>
+        <p i18n="true">`about2`</p>
+    </div>
+    <div data-bb-type="round-panel">
+        <div data-bb-type="panel-header" i18n="true">`Developer`</div>
+        <p style="background: url(img/team/MRK.png) no-repeat top left;padding-left:160px;height:160px;padding-top: 10px;">
+            Merrick Zhang
+            <br>
+            <img src="img/t.png" onclick='openTwitterAccount("anpho")' />
+            <img src="img/e.png" onclick="Invoke.email('anphorea@gmail.com', '[BingWallpaper]Feedback', '')" />
+            <img src="img/g.png" onclick="openInBrowser('http://github.com/anpho')" />
+            <img src="img/p.png" onclick="openInBrowser('https://plus.google.com/+MerrickZhang')">
+        </p>
+    </div>
+    <div data-bb-type="action-bar" data-bb-back-caption="Back">
+        <div data-bb-type="action" data-bb-style="button" data-bb-img="img/ic_contact.png" onclick="openInBrowser('http://anpho.github.io/cascades')" i18n="true">`Team`</div>
+    </div>
+    <script>
+        function openInBrowser(url) {
+            invocation.Browser.openurl(url, function() {
+            });
+        }
+        function openTwitterAccount(id) {
+            invocation.twitter.openProfile(id, function() {
+            });
+        }
+
+    </script>
 </div>

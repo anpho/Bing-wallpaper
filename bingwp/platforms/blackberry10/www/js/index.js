@@ -75,6 +75,8 @@ var app = {
         };
         config.ondomready = function(element, id, params) {
             if (id === 'view') {
+                $('#_image').css("width",window.innerWidth);
+                $('#_image').css("height",window.innerHeight);
                 if (params) {
 
                 } else {
@@ -151,7 +153,7 @@ var app = {
                     Invoke.targets(cachedurl);
                 });
                 $('#_set').bind('click', function() {
-                    if (bb.device.is720x720) {
+                    if (bb.device.is720x720 || bb.device.is1440x1440) {
                         invocation.HomeScreen.setWallpaper(cachedurl, function(result) {
                             if (!result) {
                                 Toast.regular(invocation.lastError, 1500);
@@ -162,7 +164,7 @@ var app = {
                     }
                 });
                 $('#_set2').bind('click', function() {
-                    if (bb.device.is720x720) {
+                    if (bb.device.is720x720 || bb.device.is1440x1440) {
                         invocation.HomeScreen.setWallpaper(cachedurl, function(result) {
                             if (!result) {
                                 Toast.regular(invocation.lastError, 1500);
@@ -213,7 +215,7 @@ function hideActionBar() {
     actionbarshow = false;
 }
 function showimage() {
-    $('#_image').empty();
+    $('#_image').hide();
     $('#ind').show();
     var td = new Date();
     td.setDate(td.getDate() - currentdayidx);
@@ -227,12 +229,18 @@ function showimage() {
         currenturl = url;
 
         cache.get(url, currentday.format('yyyy-MM-dd'), '_image', function(u, id) {
-            var i = new Image();
-            i.src = u;
+            /*
+             var i = new Image();
+             i.src = u;
+             cachedurl = u;
+             i.style['width'] = '100%';
+             $('#ind').hide();
+             $('#_image').append(i);
+             */
             cachedurl = u;
-            i.style['width'] = '100%';
             $('#ind').hide();
-            $('#_image').append(i);
+            $('#_image').css("background-image", "url('" + u + "')");
+            $('#_image').show();
         });
     }, currentdayidx, app.device);
 }
@@ -242,7 +250,7 @@ var currenturl = '';
 var cachedurl = '';
 
 var bingwp = {
-    lang: 'zh-CN',
+    lang: app.lang,
     apiurl: "http://www.bing.com/HPImageArchive.aspx?format=js&idx={idx}&n={n}&mkt={lang}",
     get: function(callback, idx, n, lang) {
         var url = bingwp.apiurl.replace('{idx}', idx).replace('{n}', n).replace('{lang}', lang);
@@ -284,7 +292,7 @@ var bingwp = {
             }
         });
     },
-    "fullSize": '_1920x1080.jpg',
+    "fullSize": '_1920x1200.jpg',
     "z10": '_768x1280.jpg',
     "z30": '_720x1280.jpg',
     "q10": '_720x1280.jpg'
